@@ -1,18 +1,17 @@
 # Setup
 
-Download latest release of [Bitbar](https://github.com/matryer/bitbar/releases/latest) and put in your `/Applications` folder.
+Install Bitbar:
 
-Clone the following repo on your laptop:
+```bash
+brew cask install bitbar
+```
+
+Clone this repo on your laptop then set the plugin as executable:
 
 ```bash
 mkdir -p ~/code/lewagon
 gh repo clone lewagon/bitbar
-```
-
-Then set the plugin as executable:
-
-```bash
-cd ~/code/lewagon/bitbar
+cd bitbar
 chmod a+x ticket.10s.rb
 ```
 
