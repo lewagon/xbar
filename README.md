@@ -19,7 +19,7 @@ Launch the Bitbar app and choose `~/code/lewagon/bitbar` as **Plugin Folder**
 
 ## Configuration
 
-Open the `~/code/lewagon/ticket.10s.rb` file and make sure to change line `12`:
+Open the `~/code/lewagon/bitbar/ticket.10s.rb` file and make sure to change line `12`:
 
 ```ruby
 BATCH_SLUG = 501
