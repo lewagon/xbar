@@ -16,7 +16,7 @@ cd ~/code/lewagon/bitbar
 chmod a+x ticket.10s.rb
 ```
 
-Launch the Bitbar app and choose `~/code/lewagon` as **Plugin Folder**
+Launch the Bitbar app and choose `~/code/lewagon/bitbar` as **Plugin Folder**
 
 ## Configuration
 
