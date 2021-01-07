@@ -11,7 +11,6 @@
 ## CONFIGURATION
 BATCH_SLUG = 552
 
-
 ## SCRIPT
 require 'net/http'
 require 'json'
@@ -49,7 +48,6 @@ class Plugin
     @status["color"] == "grey" ? "gray" : @status["color"]
   end
 end
-
 
 plugin = Plugin.new(BATCH_SLUG)
 puts "#{[plugin.emoji, plugin.count].join(" ")}|color=#{plugin.color}"
