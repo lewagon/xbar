@@ -9,7 +9,7 @@
 # <bitbar.dependencies>Ruby</bitbar.dependencies>
 
 ## CONFIGURATION
-BATCH_SLUG = 501
+BATCH_SLUG = 552
 
 
 ## SCRIPT
