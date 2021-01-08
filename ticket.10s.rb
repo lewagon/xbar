@@ -9,8 +9,7 @@
 # <bitbar.dependencies>Ruby</bitbar.dependencies>
 
 ## CONFIGURATION
-BATCH_SLUG = 501
-
+BATCH_SLUG = 552
 
 ## SCRIPT
 require 'net/http'
@@ -49,7 +48,6 @@ class Plugin
     @status["color"] == "grey" ? "gray" : @status["color"]
   end
 end
-
 
 plugin = Plugin.new(BATCH_SLUG)
 puts "#{[plugin.emoji, plugin.count].join(" ")}|color=#{plugin.color}"
