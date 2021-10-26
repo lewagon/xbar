@@ -24,7 +24,7 @@ chmod a+x ticket.10s.rb
 Install Bitbar:
 
 ```bash
-brew cask install bitbar
+brew install bitbar --cask
 ```
 
 Then launch the Bitbar app and choose `~/code/$GITHUB_USERNAME/bitbar` as **Plugin Folder**
