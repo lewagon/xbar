@@ -1,26 +1,35 @@
 # Setup
 
-Install Bitbar:
+Install [xbar](https://github.com/matryer/xbar):
 
 ```bash
-brew cask install bitbar
+brew install xbar
 ```
 
-Clone this repo on your laptop then set the plugin as executable:
+## Ticket Monitor
+
+To enable this plugin:
 
 ```bash
-mkdir -p ~/code/lewagon
-gh repo clone lewagon/bitbar
-cd bitbar
+cd ~/code/lewagon/xbar
+vim ticket.10s.rb # Change the `BATCH_SLUG` variable!
+
 chmod a+x ticket.10s.rb
+ln -s "`pwd`/ticket.10s.rb" ~/Library/Application\ Support/xbar/plugins/ticket.10s.rb
 ```
 
-Launch the Bitbar app and choose `~/code/lewagon/bitbar` as **Plugin Folder**
+Then in xbar, `Refresh all` and wait a few seconds.
 
-## Configuration
+## Help - Triage
 
-Open the `~/code/lewagon/ticket.10s.rb` file and make sure to change line `12`:
+Get [lewagon/help (Triage)](https://github.com/lewagon/help/labels/triage) directly into your macOS Toolbar!
 
-```ruby
-BATCH_SLUG = 501
+```bash
+cd ~/code/lewagon/xbar
+rbenv local system
+sudo gem install octokit -v 4.25.1
+sudo gem install faraday-retry
+
+chmod a+x inbox.1m.rb
+ln -s "`pwd`/triage.5m.rb" ~/Library/Application\ Support/xbar/plugins/triage.5m.rb
 ```
