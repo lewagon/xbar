@@ -30,6 +30,6 @@ rbenv local system
 sudo gem install octokit -v 4.25.1
 sudo gem install faraday-retry
 
-chmod a+x inbox.1m.rb
+chmod a+x triage.5m.rb
 ln -s "`pwd`/triage.5m.rb" ~/Library/Application\ Support/xbar/plugins/triage.5m.rb
 ```
