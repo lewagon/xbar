@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
 
-# <bitbar.title>Kitt Tickets</bitbar.title>
-# <bitbar.version>v1.0</bitbar.version>
-# <bitbar.author>Sébastien Saunier</bitbar.author>
-# <bitbar.author.github>ssaunier</bitbar.author.github>
-# <bitbar.desc>Monitor Ticket Queue for a Batch</bitbar.desc>
-# <bitbar.image>https://kitt.lewagon.com/slack/slack-bot-logo.png</bitbar.image>
-# <bitbar.dependencies>Ruby</bitbar.dependencies>
+# <xbar.title>Kitt Tickets</xbar.title>
+# <xbar.version>v1.0</xbar.version>
+# <xbar.author>Sébastien Saunier</xbar.author>
+# <xbar.author.github>ssaunier</xbar.author.github>
+# <xbar.desc>Monitor Ticket Queue for a Batch</xbar.desc>
+# <xbar.image>https://kitt.lewagon.com/slack/slack-bot-logo.png</xbar.image>
+# <xbar.dependencies>Ruby</xbar.dependencies>
 
 ## CONFIGURATION
-BATCH_SLUG = 552
+BATCH_SLUG = 1000
 
 ## SCRIPT
 require 'net/http'

@@ -1,49 +1,35 @@
 # Setup
 
-## Fork and clone this repo
-
-Fork [`lewagon/bitbar`](https://github.com/lewagon/bitbar) to your own GitHub account and clone it on your computer:
+Install [xbar](https://github.com/matryer/xbar):
 
 ```bash
-export GITHUB_USERNAME=`gh api user | jq -r '.login'`
-cd ~/code/$GITHUB_USERNAME
-gh repo clone bitbar
+brew install xbar
 ```
 
-Then make the `ticket.10s.rb` file executable:
+## Ticket Monitor
+
+To enable this plugin:
 
 ```bash
-cd ~/code/$GITHUB_USERNAME/bitbar
+cd ~/code/lewagon/xbar
+vim ticket.10s.rb # Change the `BATCH_SLUG` variable!
+
 chmod a+x ticket.10s.rb
+ln -s "`pwd`/ticket.10s.rb" ~/Library/Application\ Support/xbar/plugins/ticket.10s.rb
 ```
 
-## Set up your script bar client
+Then in xbar, `Refresh all` and wait a few seconds.
 
-### macOS
+## Help - Triage
 
-Install Bitbar:
+Get [lewagon/help (Triage)](https://github.com/lewagon/help/labels/triage) directly into your macOS Toolbar!
 
 ```bash
-brew install bitbar --cask
-```
+cd ~/code/lewagon/xbar
+rbenv local system
+sudo gem install octokit -v 4.25.1
+sudo gem install faraday-retry
 
-Then launch the Bitbar app and choose `~/code/$GITHUB_USERNAME/bitbar` as **Plugin Folder**
-
-### linux
-
-The equivalent of Bitbar for Linux is [Argos](https://github.com/p-e-w/argos).To install it go to [the GNOME extension page](https://extensions.gnome.org/extension/1176/argos/) and turn on the installation toggle.
-
-`Argos` monitors the `~/.config/argos` folder to look for scripts to execute. Remove the default `argos.sh` script there and link the `ticket.10s.rb` file to this folder:
-
-```bash
-rm ~/.config/argos/argos.sh
-ln -s ~/code/$GITHUB_USERNAME/bitbar/ticket.10s.rb ~/.config/argos/ticket.10s.rb
-```
-
-### Configure your script
-
-Open the `~/code/$GITHUB_USERNAME/bitbar/ticket.10s.rb` file and make sure to update line `12` with your batch number:
-
-```ruby
-BATCH_SLUG = 501
+chmod a+x inbox.1m.rb
+ln -s "`pwd`/triage.5m.rb" ~/Library/Application\ Support/xbar/plugins/triage.5m.rb
 ```
