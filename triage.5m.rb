@@ -11,7 +11,7 @@
 require "octokit"
 require "yaml"
 
-# QUERY = "assignee:@me state:open repo:lewagon/help"
+# QUERY = "assignee:@me state:open"
 QUERY = "repo:lewagon/help state:open label:triage"
 
 class Plugin
