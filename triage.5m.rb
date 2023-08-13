@@ -11,7 +11,6 @@
 require "octokit"
 require "yaml"
 
-# QUERY = "assignee:@me state:open"
 QUERY = "repo:lewagon/help state:open label:triage"
 
 class Plugin
@@ -22,16 +21,11 @@ class Plugin
   end
 
   def show(issue)
-    # "#{issue.repository_url.split("/").last}##{issue.number} - #{issue.title}"
     "##{issue.number} - @#{issue.user.login} - #{issue.title}"
   end
 
   def emoji
     @issues.total_count.zero? ? "✓" : "🚩"
-  end
-
-  def color
-    # @issues.total_count.zero? ? nil : "color=black"
   end
 
   def issues
@@ -47,7 +41,7 @@ end
 
 
 plugin = Plugin.new
-puts "#{[plugin.emoji, plugin.count].compact.join(" ")}|#{plugin.color}"
+puts [plugin.emoji, plugin.count].compact.join(" ")
 puts "---"
 plugin.issues.each do |issue|
   puts "#{plugin.show(issue).gsub("|", "")}|href=#{issue.html_url}"
