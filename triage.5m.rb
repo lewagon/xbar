@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # <xbar.title>Help - Triage</xbar.title>
-# <xbar.version>v1.0</xbar.version>
+# <xbar.version>v1.1</xbar.version>
 # <xbar.author>Sébastien Saunier</xbar.author>
 # <xbar.author.github>ssaunier</xbar.author.github>
 # <xbar.desc>List GitHub Issues from lewagon/help who needs triage</xbar.desc>
@@ -16,7 +16,7 @@ QUERY = "repo:lewagon/help state:open label:triage"
 
 class Plugin
   def initialize
-    token = YAML.load_file("/Users/#{`whoami`.chomp}/.config/gh/hosts.yml")["github.com"]["oauth_token"]
+    token = `/usr/local/bin/gh auth token`
     client = Octokit::Client.new(access_token: token)
     @issues = client.search_issues(QUERY)
   end
@@ -27,11 +27,11 @@ class Plugin
   end
 
   def emoji
-    @issues.total_count.zero? ? "·" : "🛟"
+    @issues.total_count.zero? ? "✓" : "🚩"
   end
 
   def color
-    @issues.total_count.zero? ? nil : "color=orange"
+    # @issues.total_count.zero? ? nil : "color=black"
   end
 
   def issues
@@ -50,5 +50,5 @@ plugin = Plugin.new
 puts "#{[plugin.emoji, plugin.count].compact.join(" ")}|#{plugin.color}"
 puts "---"
 plugin.issues.each do |issue|
-  puts "#{plugin.show(issue)}|href=#{issue.html_url}"
+  puts "#{plugin.show(issue).gsub("|", "")}|href=#{issue.html_url}"
 end
