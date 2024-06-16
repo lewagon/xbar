@@ -15,7 +15,7 @@ QUERY = "repo:lewagon/help state:open label:triage"
 
 class Plugin
   def initialize
-    token = `/usr/local/bin/gh auth token`
+    token = `/opt/homebrew/bin/gh auth token`
     client = Octokit::Client.new(access_token: token)
     @issues = client.search_issues(QUERY)
   end
